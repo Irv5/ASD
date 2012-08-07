@@ -1,106 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	
+	<meta charset="utf-8">
+	
     <title>First jQuery Mobile Example</title>
+    
+    
+    
     <!-- the three things that jQuery Mobile needs to work -->
-    <!--script src="http://code.jquery.com/jquery-1.6.4.min.js"></script-->
-    <!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script-->
-    <!--link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" /-->
-    <!--script type="text/javascript" src="js/site.js"></script-->
-     
-    <!--script src="http://code.jquery.com/jquery-1.6.4.min.js"></script-->
-	<!--script type="text/javascript"src="js/main.js"></script--> 
-	<!--script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script-->
-	
-	<!-- the three things that jQuery Mobile needs to work -->
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+    
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<!-- <script type="text/javascript"src="js/main.js"></script> -->
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
- 
-	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jQuery.Validate/1.6/jQuery.Validate.min.js"></script>
-	<script type="text/javascript"src="js/site.js"></script>
-	
-	<script type="text/javascript">
-     
-	$(function(){
-	
-	// Disable a slider
-	$("#slider").slider("disable");
-	
-	// Enable a slider
-	$("#slider").slider("enable");
-	
-	// Manually set a slider's value and refresh the state of the UI
-	$("#slider").val(5).slider("refresh");
-	
-	});
-	
-	$(function(){
-	
-	mySelect = $("#select-songInfo");
-	
-	// Disable a select menu
-	 mySelect.selectmenu("disable");
-	 
-	// Enable a select menu
-	mySelect.selectmenu("enable");
-	
-	// Manually open a select menu
-	mySelect.selectmenu("open");
-	
-	// Manually close a select menu
-	mySelect.selectmenu("close");
-	
-		
-	// Force a rebuild of the select menu
-	// Useful if you have dyanically added or removed options
-	mySelect.selectmenu("refresh", true);
-	
-	});
-
-    $(function(){
-	
-	// Display an input
-	$("#songinput").textinput('disable');
-	
-	// Enable an input
-	$("#songinput").textinput("enable");
-		
-	});
-	
-	$(function(){
-	
-	// Disable a button
-	$("#checkbox-pf1").checkboxradio("disable");
-	
-	// Enable a disable button
-	$("checkbox-pf1").checkboxradio("enable");
-	
-	// Manually activate a button and refresh its UI state
-	$("#radio-rb1").attr("checked", true).checkboxradio("refresh");
-		
-	});
-	
-	$(function(){
-	
-	// Display an input
-	$("#details").textinput('disable');
-	
-	// Enable an input
-	$("#details").textinput("enable");
-		
-	});
-  
-    </script>
-	
-	
-		
-
-	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+ 	<script type="text/javascript"src="js/site.js"></script>
+ 	<script src="js/libs/modernizr.custom.min.js"></script>
+ 	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+ 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-    <!-- This is the first page -->
+    <!-- This is the index page -->
     
         <header data-role="header">
         <h1>
@@ -110,11 +29,14 @@
 		<nav data-role="navbar">
 		
         <ul id="nav">
-            <li><a href="#" class="ui-btn-active ui-state-persist" data-icon="minus">Clear Stored Songs</a></li>
-            <li><a href="#secondpage" data-icon="check">Display Songs</a></li>
-        
+            <li><a href="#" class="ui-btn-active ui-state-persist" id="displayData">Display Song Data</a></li>
+            <li><a href="#" id="clear">Clear Song Data</a></li>
+            <li><a href="#" id="jsonbutton">JSON</a></li>  
+            <li><a href="#" id="xmlbutton">XML</a></li> 
+            <li><a href="#" id="csvbutton">CSV</a></li>     
         </ul>
         </nav>
+        <div id="songInfo"></div>
         
         </header>
         <div data-role="content">
@@ -178,9 +100,8 @@
 				<div data-role="content">
 				<footer data-role="footer">Footer</footer>
 			</div>
-        </form>
-        </div>
-    
+			
+			    
 
 </body>
 </html>
