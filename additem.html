@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css"/>	
+		<link rel="stylesheet" type="text/css" href="css/indexstyle.css" />
+		<script src="js/libs/jquery.js" type="text/javascript"></script>
+		<script src="js/libs/jquery.validate.js" type="text/javascript"></script>
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+	<body>
+		<!--Header -->
+			<div data-role="page" id="additem" data-add-back-btn="true" data-theme="b">
+
+			
+		<center>	<div data-role="header" id="header">
+				<center><img src="images/cta2.gif" /></center>
+				<a href="index.html" data-rel="back" data-icon="home" class="ui-btn-left" data-theme="d">Home</a>
+			</div>
+			
+			
+			<div id='minform' data-role="content">
+				
+			<h2>Catalog Your Music</h2>
+				
+			<form class="cmxform" method='post' action="" id="minsignup">
+			<fieldset>
+					
+				<div data-role="fieldcontain">
+					<label for="sname">Name Of Song</label>
+					<input type="text" data-theme='b' name="sname" id="sname" class="required" />
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="aname">Name Of Album</label>
+					<input type="text"  data-theme='b' name="aname" id="aname" class="required" />
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="arname">Name Of Artist</label>
+					<input type="text" data-theme='b' name="arname" id="arname" class="required" />
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="url">Down Load Song From</label>
+					<input type="text"  data-theme='b' name="url" id="url" class="required" />
+				</div>
+		<div  data-role="fieldcontain">
+					<label for="favorite">Add To Favorites</label>
+				<label data-theme="b" for="yes">Yes </label><input type="radio" value="Yes" id="yes" name="favorite" />
+				<label data-theme="b" for="no">No </label><input type="radio" checked value="No" id="no" name="favorite" /><br />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="rate">Rate This Song</label>
+					<p id="songrating">Please Rate This Song</p>
+					<input type="range" min="0" max="10" step="1" name="song" id="rating" value="5" data-theme="b" />
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label> Would You Recommend This Song To A Friend?</label>
+				<input type="checkbox" id="recommend" name="recommend" checked=""/>
+				<label for="recommend" data-theme="b">Yes<label>
+			
+			</div><br/>
+			
+			
+			<div id='select' data-role="fieldcontain">
+					<fieldset data-role="controlgroup" data-type="vertical">
+						<select name="songType" id="dropdown" data-theme="b"  data-native-menu="false" class="required" >
+							<option data-placeholder="true" value="">Please Select Song Type</option>
+							<optgroup>
+								<option value="Fun">Fun Music</option>
+								<option value="Other">Other Music</option>
+								<option value="Party">Party Music</option>
+								<option value="Relaxed">Relaxed Music</option>
+							</optgroup>
+						</select>
+					</fieldset>
+				</div>
+
+		
+		
+			<div id='subres' data-role="fieldcontain">
+					<input type="submit" id='submit' value="Submit" data-theme="b" data-icon="check" data-iconpos="right" />
+					<input type="reset" value="Clear Form" data-theme="b" data-icon="back" data-iconpos="right" />
+				</div>
+				</fieldset>	
+			</form>
+			
+			<div id="list">
+					<div id="edit-item-button" style="display: none;">
+				<input type="button" id="edit-item" value="Save Changes" />
+			</div></div>
+			</div>
+			
+			<div data-role="fieldcontain" data-theme='b'>
+							<h6></h6>
+					<ul data-role="listview" data-theme="b">
+						<li>											
+						<a id="displaybutton" data-theme="b" data-role="button" data-iconpos="right" data-icon="r-arrow" href="#">
+						Display Songs</a>
+						</li>
+					
+						<li>
+						<a href="#" data-theme="b" data-role="button" onclick="clearData(); location.reload();">Clear Local Storage</a>
+						</li>
+					</ul>
+					<div id='display'></div>
+					</div>
+				
+			<div data-role="footer" data-theme="b">
+				<center><p id="closing"></p></center>
+			</div>	
+			
+		</div>
+		
+		<!--Data links -->
+		<a href="#" id="clear">Clear Stored Data</a>
+		<a href="#" id="displayLink">Display Data</a>
+		<a href="additem.html" id="addnew" style="display:none;">Add New Item</a>
+		
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>	
+	<script src="js/main.js" type="text/javascript"></script>
+	</body>
+</html>
