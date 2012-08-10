@@ -1,0 +1,42 @@
+{"PartyMusic":[
+       {
+            "sname":"Slow Down",
+            "aname":"Best of Brand Nubian",
+            "arname":"Brand Nubian",
+            "url":"www.yahoo.com",
+            "songType":"Party Music"
+            
+             },
+        {
+            "sname":"Flirt",
+            "aname":"Unknown Album",
+            "arname":"Cameo",
+            "url":"www.yahoo.com",
+            "songType":"Party Music"
+           
+        },
+           {
+        	"sname":"I like",
+            "aname":"Guy",
+            "arname":"Guy",
+            "url":"www.yahoo.com",
+            "songType":"Party Music"           
+        	},
+         {
+        	"sname":"Back in Love",
+            "aname":"L.T.D",
+            "arname":"L.T.D",
+            "url":"www.yahoo.com",
+            "songType":"Party Music"           
+        },
+           {
+        	"sname":"Just Fine",
+            "aname":"White Lable",
+            "arname":"Mary J. Blige",
+            "url":"www.yahoo.com",
+            "songType":"Party Music"
+           
+        }
+    
+]
+}
