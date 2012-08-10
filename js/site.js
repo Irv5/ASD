@@ -1,100 +1,95 @@
-// jQuery save data
-
-$('#submit').live('click', function saveData(id) {
-var songname = $("#sname").val();
-var albumname = $("#aname"). val();
-var artistname = $("#arname").val();
-var favorite = $("#favorite"). val();
-var fav = $("#fav").val();
-var url = $("#url").val();
-var date = $("#date").val();
-
-var item = [songname, albumname, artistname, favorite, fav, url, date];
-    localStorage.setItem(key, item);
-    location.reload();
-    alert("Item Saved!");
+$('#json').bind('click', function(){
+	$('#browse').empty();
+	$.ajax({
+		url: 'XHR/data.json',
+		type: 'GET',
+		dataType: 'json',
+		success: function(response){
+        	for (var i=0, j=response.PartyMusic.length; i<j; i++){
+				var jdata = response.PartyMusic[i];
+				$(''+
+					'<li class="members">'+
+						'<h2>'+ jdata.sname +'</h2>'+
+						'<h2>'+ jdata.aname +'</h2>'+
+						'<h2>'+ jdata.arname +'</h2>'+
+						'<h3>'+ jdata.email +'</h3>'+
+						'<h2>'+ jdata.songType +'</h2>'+
+					'</li><hr/>'
+				).appendTo('#browse');
+				console.log(response);
+			}
+		}
+	});
+	return false;
 });
 
-function toggleControls(n) {
-    switch (n) {
-    case "on":
-        $('#songInfo').css('display', 'none');
-        $('#clear').css('display', 'inline');
-        break;
-    case "off":
-        $('#songInfo').css('display', 'block');
-        $('#clear').css('display', 'inline');
-        $('#list').css('display', 'none');
-        break;
-    default:
-        return false;
-    }
-}
-//Clear Data
+	$('#xml').bind('click', function(){
+	$('#browse').empty();
+	$.ajax({
+		url: 'XHR/data.xml',
+		type: 'GET',
+		dataType: 'xml',
+		success: function(xml){
+			console.log(xml);
+			$(xml).find("song").each(function(){
+   				var song = $(this).find('sname').text();
+   				var album= $(this).find('aname').text();
+   				var artist= $(this).find('arname').text();
+				var url= $(this).find('url').text();
+    			$(''+
+					'<li class="member">'+
+						'<h2>'+ song+'</h2>'+
+						'<h2>'+ album +'</h2>'+
+						'<h3>'+ artist +'</h3>'+
+						'<h4>'+ url+'</h4>'+				
 
-function clearLocal() {
-    if (localStorage.length === 0) {
-        alert("There is no data to clear.");
-    } else {
-        localStorage.clear();
-        alert("All data has been cleared.");
-        window.location.reload();
-        return false;
-    }
-}
+						
+					'</li><hr />'
+				).appendTo('#browse');
+				console.log(xml);
+			});
+		}
+	});
+	return false;
+});
+   
+	$('#csv').bind('click', function(){
+	$('#browse').empty();
+	 $.ajax({
+        type: "GET",
+        url: "XHR/data.csv",
+        dataType: "text",
+        success: function(data) {
+        	var allTextLines = data.split(/\r\n|\n/);
+    		var headers = allTextLines[0].split(',');
+    		var lines = []; 
 
-$("#songInfo").validate({
-    submitHandler: function(form) {
-        console.log("Call Action");
-    }
-  });
-
-
-  
-// Edit data
-
-function editItem(id) {
-    var itemId = id;
-	var value = localStorage.getItem(itemId);
-	value = value.split(',');
-	toggleControls("off");
-    var songname = value[0];
-    var albumname = value[1];
-    var artistname = value[2];
-    var favorite = value[3];
-    var fav = value[4];
-	var url = value[5];
-	var date = value[6];
-
-
-	$("#sname").val(songname);
-	$("#aname"). val(albumname);
-	$("#arname").val(artistname);
-	$("#favorite"). val(favorite);
-	$("#fav").val(fav);
-	$("#url").val(url);
-	$("#date").val(date);
-
-	var editButton = $('#edit-item-button').css('display', 'block');
-    var subresButtons = $('#submit-reset-buttons').css('display', 'none');
-    var itemList = $('#list').css('display', 'none');
-    
-    $('#edit-item').live('click', function clickEdit() {
-    var songname = $("#sname").val();
-	var albumname = $("#aname"). val();
-	var artistname = $("#arname").val();
-	var favorite = $("#favorite"). val();
-	var fav = $("#fav").val();
-	var url = $("#url").val();
-	var date = $("#date").val();
-
-	var item = [songname, albumname, artistname, favorite, fav, url, date];
-
-	localStorage.setItem(itemId, item);           
-    location.reload();
-    alert("Your List Edited!");
-    });
-}
-
-
-//Delete an Item
+			for (var i=1; i<allTextLines.length; i++) {
+				var data = allTextLines[i].split(',');
+				if (data.length == headers.length) {
+					var members= []; 
+					
+					for (var j=0; j<headers.length; j++) {
+						members.push(data[j]);
+					}
+					lines.push(members); 
+				}
+				
+			}
+			
+			for (var m=0; m<lines.length; m++){
+				var member = lines[m];
+			$(''+
+					'<li class="members">'+
+						'<h2>'+ member[0]+" " + member[1] +'</h2>'+
+						'<h4>'+ member[5] +'</h4>'+
+						'<h4>'+ member[2] +'</h4>'+
+						'<h4>'+ member[3] +'</h4>'+
+					'</li><hr />'
+				).appendTo('#browse');
+			console.log(data);	
+			}
+        }
+	});
+	return false;
+});
