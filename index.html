@@ -1,107 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	
-	<meta charset="utf-8">
-	
-    <title>First jQuery Mobile Example</title>
-    
-    
-    
-    <!-- the three things that jQuery Mobile needs to work -->
-    
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
- 	<script type="text/javascript"src="js/site.js"></script>
- 	<script src="js/libs/modernizr.custom.min.js"></script>
- 	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
- 	<script type="text/javascript" src="js/main.js"></script>
-</head>
-<body>
-    <!-- This is the index page -->
-    
-        <header data-role="header">
-        <h1>
-            Music Catalog Inventory
-        </h1>
-		
-		<nav data-role="navbar">
-		
-        <ul id="nav">
-            <li><a href="#" class="ui-btn-active ui-state-persist" id="displayData">Display Song Data</a></li>
-            <li><a href="#" id="clear">Clear Song Data</a></li>
-            <li><a href="#" id="jsonbutton">JSON</a></li>  
-            <li><a href="#" id="xmlbutton">XML</a></li> 
-            <li><a href="#" id="csvbutton">CSV</a></li>     
-        </ul>
-        </nav>
-        <div id="songInfo"></div>
-        
-        </header>
-        <div data-role="content">
-            <p>Add Song Information</p>
-        </div>   
-    	<form id="theForm" method="post">
-        <div data-role="fieldcontain">
-        
-                <fieldset data-role="controlgroup" data-type="vertical">
-    		    <legend>Select Song Type:</legend>
-        		<label for="songInfo">Select Song Type:</label>
-			    <select name="songInfo" id="songInfo">
-			    	<option value="favorite">Favorite</option>
-                    <option value="fun">Fun</option>
-                    <option value="party">Party</option>
-                    <option value="relaxed">Relaxed</option>    
-                </select>
-                </fieldset>
-        </div>
-        <div data-role="content">
-        
-        	<ul class="text" id="#songinput">
-        		<label for="sname">Name of Song:</label>
-			    <input class="required" name="sname" type="text" id="sname" value="" placeholder="Name of Song"/>
-    		    <label for="aname">Album:</label>
-			    <input class="required" name="aname" type="text" id="aname" value="" placeholder="Album"/>
-			    <label for="arname">Artist: </label>
-			    <input class="required" name="arname" type="text" id="arname" value="" placeholder="Artist"/>
-			    <label for="email">Email</label>
-   				<input class="required" name="email" type="text" id="email" placeholder="Email"/>
-			</ul>
-            
-            
-            	<legend>Save as Favorite:</legend>
-    		    <label for="rb1">Add to Favorites</label>
-			    <input type="radio" name="rb" id="rb1" value="rb1"/>
-    		    <label for="rb2">Don't Add to Favorites</label>
-			    <input type="radio" name="rb" id="rb2" value="rb2"/>
-            
-            
-            	<legend>Would You Recommend This Song?:</legend>
-    		    <label for="pf1">Yes</label>
-            	<input type="checkbox" name="pf1" id="pf1" />
-            
-            
-    			<label for="slider">Rate Song from 1 - 10</label>
-           		<input type="range" name="slider" id="slider" value="5" min="0" max="10" />
-            
-            	<label for="date">Date Added: </label>
-			    <input type="date" name="date" id="date" value="" placeholder="Date Added"/>
+
+<html lang="">
+	<head>
 			
-            	
-			    <label for="details">Music Info!</label>
-            	<textarea id="details"></textarea>
-                
-				
-				<input type="submit" value="Save Song"/>
-				<input type="reset" value="Reset Button" />
-				
-				
-				<div data-role="content">
-				<footer data-role="footer">Footer</footer>
+		<meta charset="utf-8">
+		<meta name="description" content="" />
+		<meta name="keyword" content="" />
+		<meta name="robots" content="" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+		<meta http-equiv="cleartype" content="on">
+
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />	
+		<link rel="stylesheet" type="text/css" href="css/indexstyle.css" />
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+
+	<body>
+		
+		<div data-role="page" id="main" data-theme="a">
+			<div data-role="header" id="header">
+				<h2>Catalog Your Music</h2>
 			</div>
 			
-			    
+			<div data-role="header" id="header">
+					<center> <img src="images/cta2.gif" /> </center>
+				</div>
+		<div id="getdata" data-role="fieldcontain">
+				<div id="get-data-buttons">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<a href="#" data-role="button" data-theme="b" id="json">JSON</a>
+						</div>
+					
+						<div class="ui-block-a">
+							<a href="#" data-role="button" data-theme="b" id="xml">XML</a>
+						</div>
+						
+						<div class="ui-block-a">
+							<a href="#" data-role="button" data-theme="b" id="csv">CSV</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<nav>
+				<a button type="button" href="additem.html" data-transition='slide' data-back='true'>Catalog Your Music</a>
+			</nav>
+			
+			<ul data-role="listview" data-theme="a" data-divider-theme="a">
+			<li data-role="list-divider">View Songs:</li>
+			</ul>
+			
+			
+			
+			<div id="browse" data-role="content" data-filter="true" data-theme="a">
+				<ul data-role="listview" data-theme="c">
+					
+	
+						<div data-role="content" data-theme='c'>
+							<h6></h6>
+					<ul data-role="listview" data-theme="a">
+						
+					</ul>
+					</div>
 
-</body>
+
+			
+			
+		<div data-role="page" id="JSON" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				
+				</div>
+
+		</div>
+		
+		<div data-role="page" id="XML" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				
+				</div>
+
+		</div>
+			
+		<div data-role="page" id="CSV" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				<
+				</div>
+
+		</div>
+		
+		<!-- /footer -->
+
+		<div data-role="page" id="JSON" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				
+				</div>
+
+		</div>
+		
+		<div data-role="page" id="XML" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				
+				</div>
+
+		</div>
+			
+		<div data-role="page" id="CSV" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				
+				</div>
+
+		</div>
+
+			
+			
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+			
+	
+
+	</body>
 </html>
