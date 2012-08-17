@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 
 <html lang="">
-	<head>
-			
+	<html> 
+	<head> 
 		<meta charset="utf-8">
-		<meta name="description" content="" />
-		<meta name="keyword" content="" />
-		<meta name="robots" content="" />
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	
-		<meta http-equiv="cleartype" content="on">
-
-		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />	
-		<link rel="stylesheet" type="text/css" href="css/indexstyle.css" />
-		<script src="js/libs/modernizr.custom.min.js"></script>
-	</head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		
+	</head>	
 
 	<body>
+	
+	
+			
 		
 		<div data-role="page" id="main" data-theme="a">
 			<div data-role="header" id="header">
-				<h2>Catalog Your Music</h2>
+				<ul>
+			 	<li>
+					<h2>Catalog Your Music</h2>
+				</li>
+				</ul>
 			</div>
 			
 			<div data-role="header" id="header">
 					<center> <img src="images/cta2.gif" /> </center>
 				</div>
 		<div id="getdata" data-role="fieldcontain">
+		
+				
+
 				<div id="get-data-buttons">
 					<div class="ui-grid-a">
-						<div class="ui-block-a">
-							<a href="#" data-role="button" data-theme="b" id="json">JSON</a>
+						<div class="ui-block-b">
+											
+						<a href="#" data-role="button" data-theme="b" id="json">JSON</a>
+							
 						</div>
 					
-						<div class="ui-block-a">
+						<div class="ui-block-b">
 							<a href="#" data-role="button" data-theme="b" id="xml">XML</a>
 						</div>
 						
-						<div class="ui-block-a">
+						<div class="ui-block-b">
 							<a href="#" data-role="button" data-theme="b" id="csv">CSV</a>
 						</div>
+						
+						<div class="ui-block-b">
+						<a href="http://127.0.0.1:5984/asdcouch/_all_docs?include_docs=true&start_key=%22song:%22&end_key=%22song:zzzzzzz%22" data-role="button" data-theme="b" id="csv">Couchdb</a>
+						
+						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -92,7 +103,7 @@
 			<div data-role="header" data-position="fixed" id="header">
 				<
 				</div>
-
+			
 		</div>
 		
 		<!-- /footer -->
@@ -120,12 +131,33 @@
 				</div>
 
 		</div>
+		
+		<div data-role="page" id="Couchdb" data-add-back-btn="true" data-theme="a">
+			
+			<div data-role="header" data-position="fixed" id="header">
+				
+				</div>
+			
+
+		</div>
+					
+<div data-role="page" id="home" data-them="b">
+			<div data-role="header" data-position="fixed" data-them="b">
+				<h1>Catalog Your Music</h1>
+			</div>
+			<div data-role="content" class="ui-body-a">
+				<ul id="songlist" data-role="listview">
+				</ul>
+			</div>	
+			
+			</div>
 
 			
 			
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 	<script type="text/javascript" src="js/site.js"></script>
+	<script src="main.js"></script>
 			
 	
 
