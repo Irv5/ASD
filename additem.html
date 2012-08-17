@@ -21,31 +21,50 @@
 			</div>
 			
 			
-			<div id='minform' data-role="content">
+			<div id='minform' data-role="content" data-theme="d">
+		
+			
 				
 			<h2>Catalog Your Music</h2>
 				
-			<form class="cmxform" method='post' action="" id="minsignup">
+			<form class="cmxform" method='post' action="" id="minsignup" data-theme="d">
 			<fieldset>
 					
-				<div data-role="fieldcontain">
-					<label for="sname">Name Of Song</label>
-					<input type="text" data-theme='b' name="sname" id="sname" class="required" />
+				<div data-role="fieldcontain" data-theme="d">
+				<ul data-role="listview" >
+					<li>
+					<label data-theme="d" for="sname">Name Of Song</label>
+					<center><input type="text" data-theme='b' name="sname" id="sname" class="required"  /></center>
+				</li>
+				</ul>
+				
 				</div>
 				
 				<div data-role="fieldcontain">
-					<label for="aname">Name Of Album</label>
-					<input type="text"  data-theme='b' name="aname" id="aname" class="required" />
+				<ul data-role="listview">
+				<li>
+					<label data-theme="d" for="aname">Name Of Album</label>
+					<center><input type="text"  data-theme='b' name="aname" id="aname" class="required" /></center>
+				</li>
+				</ul>
 				</div>
 				
 				<div data-role="fieldcontain">
-					<label for="arname">Name Of Artist</label>
-					<input type="text" data-theme='b' name="arname" id="arname" class="required" />
+				<ul data-role="listview">
+				<li>
+					<label data-theme="b" for="arname">Name Of Artist</label>
+					<center><input type="text" data-theme='b' name="arname" id="arname" class="required" /></center>
+				</li>
+				</ul>
 				</div>
 				
 				<div data-role="fieldcontain">
-					<label for="url">Down Load Song From</label>
-					<input type="text"  data-theme='b' name="url" id="url" class="required" />
+				<ul data-role="listview">
+				<li>
+					<label data-theme="b" for="url">Down Load Song From</label>
+					<center><input type="text"  data-theme='b' name="url" id="url" class="required" /></center>
+				</li>
+				</ul>
 				</div>
 		<div  data-role="fieldcontain">
 					<label for="favorite">Add To Favorites</label>
@@ -93,6 +112,8 @@
 					<div id="edit-item-button" style="display: none;">
 				<input type="button" id="edit-item" value="Save Changes" />
 			</div></div>
+			
+			
 			</div>
 			
 			<div data-role="fieldcontain" data-theme='b'>
@@ -119,7 +140,7 @@
 		<!--Data links -->
 		<a href="#" id="clear">Clear Stored Data</a>
 		<a href="#" id="displayLink">Display Data</a>
-		<a href="additem.html" id="addnew" style="display:none;">Add New Item</a>
+		<a href="additem.html" id="addnew" style="display;">Add New Item</a>
 		
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
