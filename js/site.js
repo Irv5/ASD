@@ -1,4 +1,4 @@
-$('#json').bind('click', function(){
+$('#json').on('click', function(){
 	$('#browse').empty();
 	$.ajax({
 		url: 'XHR/data.json',
@@ -23,7 +23,7 @@ $('#json').bind('click', function(){
 	return false;
 });
 
-	$('#xml').bind('click', function(){
+	$('#xml').on('click', function(){
 	$('#browse').empty();
 	$.ajax({
 		url: 'XHR/data.xml',
@@ -53,7 +53,7 @@ $('#json').bind('click', function(){
 	return false;
 });
    
-	$('#csv').bind('click', function(){
+	$('#csv').on('click', function(){
 	$('#browse').empty();
 	 $.ajax({
         type: "GET",

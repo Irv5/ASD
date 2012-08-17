@@ -1,6 +1,26 @@
 /* ASD Project 1 Irvin Reaves*/
 
-$('#submit').bind('click', function saveItem(id) {
+$(document).ready(function() {
+	$.ajax({
+		"url": "_view/songs",
+		"dataType": "json",
+		"success": function(data) {
+			$.each(data.rows, function(index, song) {
+				var type = song.value.type;
+				var when = song.value.when;
+				var party = song.value.party;
+				$('#songlist').append(
+					$('<li>').append(
+							$('<a>').attr("href", "#")
+									.text(type)
+									)
+				);
+			});
+			$('#songlist').listview('refresh');	
+		}	
+	});
+});
+$('#submit').live('click', function saveItem(id) {
 	var d = new Date();
 	var key = (d.getTime());
 	var sname = $('#sname').val();
@@ -183,7 +203,7 @@ function editItem(id) {
 		};
 
 
-		$('#edit-item').bind('click', clickEdit);
+		$('#edit-item').live('click', clickEdit);
 	}
 };
 
@@ -207,7 +227,6 @@ function deleteItem(id) {
 		alert("Item not removed.");
 	}
 };
-
 
 
 
