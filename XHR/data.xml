@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <songs>
     <song>
         <sname>Slow Jam</sname>
         <arname>Atlantic Star</arname>
         <aname>Blue Skies</aname>
-        <url>http://www.rhapsody.com</ulr>
+        <url>http://www.rhapsody.com</url>
     </song>
     <song>
         <sname>Jump</sname>
         <arname>Sit Back</arname>
         <aname>Jump</aname>
-        <url>http://www.rhapsody.com</ulr>
+        <url>http://www.rhapsody.com</url>
     </song>
     <song>
         <sname>Blues</sname>
         <arname>Jazz Band</arname>
         <aname>Jazz Man</aname>
-        <url>http://www.rhapsody.com</ulr>
+        <url>http://www.rhapsody.com</url>
     </song>
     <song>
         <sname>Let The Music</sname>
         <arname>Jim</arname>
         <aname>Cold Water</aname>
-        <url>http://www.rhapsody.com</ulr>
+        <url>http://www.rhapsody.com</url>
     </song>
     <song>
         <sname>My Time</sname>
         <arname>Slim</arname>
         <aname>Never Give Up</aname>
-        <url>http://www.rhapsody.com</ulr>
+        <url>http://www.rhapsody.com</url>
     </song>
 </songs>
